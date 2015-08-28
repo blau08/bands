@@ -1,11 +1,7 @@
 development:
   adapter: postgresql
   database: band_development
-  user: postgres
-  password: secret
-
+  
 test:
   adapter: postgresql
   database: band_test
-  user: postgres
-  password: secret
