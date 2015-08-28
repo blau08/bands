@@ -7,3 +7,5 @@ development:
 test:
   adapter: postgresql
   database: band_test
+  user: postgres
+  password: secret
