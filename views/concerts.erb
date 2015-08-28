@@ -1,0 +1,19 @@
+<h1>Concerts:</h1>
+
+<% @concerts.each() do |concert| %>
+    <li><a href = "/concert/<%= concert.id() %>"><%= concert.name() %></a></li>
+<% end %>
+
+<br>
+
+<form action="/concert" method="post">
+  <input id="name" name="name" type="text" placeholder="Enter Concert">
+  <button type="submit">Add</button>
+</form>
+
+<form>
+  <br>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>

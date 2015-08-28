@@ -1,0 +1,36 @@
+<h1>Bands</h1>
+<hr>
+
+<% @bands.each() do |band| %>
+  <li><a href = "/band/<%= band.id() %>"><%= band.name() %></a></li>
+<% end %>
+
+<hr>
+
+<h3>Add a band:</h3>
+<form action="/band" method="post">
+  <input id="name" name="name" type="text" placeholder="Add Band Name">
+  <button type="submit">Add</button>
+</form>
+
+<hr>
+
+<form action="/bands/new" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <select id="band_edit" name="band_edit">
+    <% @bands.all().each() do |band| %>
+      <option value="<%= band.id() %>"><%= band.name() %></option>
+    <% end %>
+  </select>
+  <label for="update_name">Updated Name:</label>
+  <input type="text" name="update_name" id="update_name" placeholder="Updated Name">
+  <button type="submit">Update</button>
+</form>
+
+<hr>
+
+<form>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+<h1><%= @band.name() %></h1>
+
+<br>
+
+<h4>Concerts:</h4>
+
+<% @band.concerts.each() do |concert| %>
+  <li><a href="/concert/<%= concert.id() %>"><%= concert.name() %></a></li>
+<% end %>
+
+<br>
+<hr>
+
+<h4>Venues:</h4>
+
+<% @band.venues.each() do |venue| %>
+  <li><a href="/venue/<%= venue.id() %>"><%= venue.name() %></a></li>
+<% end %>
+
+<br>
+<hr>
+
+<form action="/band/<%= @band.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <% @venues.each() do |venue| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
+      </label>
+    </div>
+  <% end %>
+  <button type="submit">Add venues</button>
+</form>
+
+<br>
+
+<form action="/band/<%=@band.id %>" method="post">
+    <div class="form-group">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn btn-danger" name="delete" id="delete">Delete</button>
+
+
+      <a href="/" class="btn btn-info" role="button">Home</a>
+  </div>
+</form>

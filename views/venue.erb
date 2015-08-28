@@ -1,0 +1,15 @@
+<h1><%= @venue.name() %></h1>
+<hr>
+<% @venue.bands.each() do |band| %>
+    <li><a href="/band/<%= band.id() %>"><%= band.name() %></a></li>
+<% end %>
+
+<br>
+<form action="/venue/<%=@venue.id %>" method="post">
+    <div class="form-group">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn btn-danger" name="delete" id="delete">Delete</button>
+
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>

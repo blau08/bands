@@ -1,0 +1,28 @@
+<h1><%= @concert.name() %></h1>
+<hr>
+<% @concert.bands.each() do |band| %>
+    <li><a href="/band/<%= band.id() %>"><%= band.name() %></a></li>
+<% end %>
+
+<form action="/concert/<%= @concert.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <% @bands.each() do |band| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="band_ids[]" value="<%= band.id() %>"><%= band.name() %>
+      </label>
+    </div>
+  <% end %>
+  <button type="submit" class="btn btn-primary">Add band</button>
+</form>
+<br>
+
+<form action="/concert/<%=@concert.id %>" method="post">
+    <div class="form-group">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn btn-danger" name="delete" id="delete">Delete Concert</button>
+
+      <a href="/" class="btn btn-info" role="button">Home</a>
+
+    </div>
+</form>

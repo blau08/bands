@@ -1,0 +1,23 @@
+<h1>Venues</h1>
+
+<hr>
+
+<% @venues.each() do |venue| %>
+    <li><a href = "/venue/<%= venue.id() %>"><%= venue.name() %></a></li>
+<% end %>
+
+<br>
+
+<form action="/venue" method="post">
+  <input id="name" name="name" type="text" placeholder="Enter Venue">
+
+  <button type="submit">Add</button>
+</form>
+
+<hr>
+
+<form>
+    <div class="form-group">
+      <a href="/" class="btn btn-info" role="button">Home</a>
+    </div>
+</form>
