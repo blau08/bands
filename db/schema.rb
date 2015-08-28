@@ -20,22 +20,27 @@ ActiveRecord::Schema.define(version: 20150828163435) do
     t.string "name"
   end
 
-  create_table "concerts", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "concerts_bands", force: :cascade do |t|
+  create_table "bands_concerts", force: :cascade do |t|
     t.integer "band_id"
     t.integer "concert_id"
   end
 
-  create_table "venues", force: :cascade do |t|
+  create_table "bands_venues", force: :cascade do |t|
+    t.integer "band_id"
+    t.integer "venue_id"
+  end
+
+  create_table "concerts", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "venues_bands", force: :cascade do |t|
-    t.integer "band_id"
+  create_table "concerts_venues", force: :cascade do |t|
+    t.integer "concert_id"
     t.integer "venue_id"
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "name"
   end
 
 end

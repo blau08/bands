@@ -8,7 +8,7 @@ class CreateBandsTables < ActiveRecord::Migration
       t.column(:name, :string)
     end
 
-    create_table(:concerts_bands) do |t|
+    create_table(:bands_concerts) do |t|
       t.column(:band_id, :int)
       t.column(:concert_id, :int)
     end
@@ -17,8 +17,13 @@ class CreateBandsTables < ActiveRecord::Migration
       t.column(:name, :string)
     end
 
-    create_table(:venues_bands) do |t|
+    create_table(:bands_venues) do |t|
       t.column(:band_id, :int)
+      t.column(:venue_id, :int)
+    end
+
+    create_table(:concerts_venues) do |t|
+      t.column(:concert_id, :int)
       t.column(:venue_id, :int)
     end
   end
