@@ -36,16 +36,18 @@ end
 
 patch("/band/:id") do
   venue_ids = params.fetch("venue_ids")
+  # concert_ids = params.fetch("venue_ids")
   @band = Band.find(params.fetch("id").to_i())
+
   venue_ids.each() do |venue_id|
     venue = Venue.find(venue_id.to_i())
     @band.venues.push(venue)
   end
 
-  concert_ids.each() do |concert_id|
-    concert = Concert.find(concert_id.toi())
-    @band.concerts.push(concert)
-  end
+  # concert_ids.each() do |concert_id|
+  #   concert = Concert.find(concert_id.to_i())
+  #   @band.concerts.push(concert)
+  # end
 
   @concerts = Concert.all()
   @venues = Venue.all()
