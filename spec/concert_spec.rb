@@ -9,4 +9,6 @@ describe(Concert) do
       expect(test_concert.bands()).to(eq([test_band]))
     end
   end
+  it{should have_and_belong_to_many(:bands)}
+  it{should have_and_belong_to_many(:venues)}
 end

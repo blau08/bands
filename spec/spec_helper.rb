@@ -1,7 +1,10 @@
 ENV['RACK_ENV'] = 'test'
-
+require('rspec')
+require('pg')
 require("bundler/setup")
+require("sinatra/activerecord")
 Bundler.require(:default, :test)
+set(:root, Dir.pwd())
 Dir[File.dirname(__FILE__) + '/../lib/*.rb'].each { |file| require file }
 
 require('capybara/rspec')
@@ -10,7 +13,7 @@ set(:show_exceptions, false)
 require('./app')
 
 RSpec.configure do |config|
-  config.after(:each) do
+    config.after(:each) do
     Band.all().each() do |t|
       t.destroy()
     end

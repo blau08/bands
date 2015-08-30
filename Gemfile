@@ -8,3 +8,4 @@ gem('sinatra')
 gem('capybara')
 gem('sinatra-contrib', :require=> 'sinatra/reloader')
 gem('rake')
+gem 'shoulda-matchers'
