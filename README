@@ -1,0 +1,17 @@
+App Name: Bands | Brian Lau | 8/31/2015
+
+Bands is an app that lets your organize bands, concerts, and venues.
+
+Application Instructions
+1. Visit Bands at https://bands-list.herokuapp.com/
+2. Create bands, concerts, and venues
+3. Add to bands to view list of upcoming events.
+
+Setup Instructions
+1. git clone https://github.com/blau08/bands
+2. bundle
+3. rake db:create
+4. rake db:migrate
+5. ruby app.rb
+
+Bands uses a postgres database, compiled with a ruby back-end, and deployed to heroku using sinatra.
